@@ -30,6 +30,8 @@ jobs:
           pip install -r tests/requirements.txt
           # try fix issue with importlib_resources
           pip install importlib-resources
+      - name: run pre-commit hooks
+        run: pre-commit run --all-files
       - name: test startup
         run: ./test_startup.sh
       - name: setup chromedriver
